@@ -27,7 +27,7 @@ void Molecule::computeBasisFunctions()
         }
     }
 
-    // Calc basis functions and electrons
+    // Calc basis functions
 
     numBasisFunctions = 4 * numCarbon + numHydrogen;
     numElectrons = 2 * (4 * numCarbon + numHydrogen) / 2;
