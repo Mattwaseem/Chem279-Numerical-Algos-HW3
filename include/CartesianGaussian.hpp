@@ -1,6 +1,7 @@
 #pragma once
 #ifndef CARTESIANGAUSSIAN_HPP
 #define CARTESIANGAUSSIAN_HPP
+#include <armadillo>
 
 class CartesianGaussian
 {

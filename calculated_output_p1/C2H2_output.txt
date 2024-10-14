@@ -1,0 +1,12 @@
+Number of atoms: 4, Charge: 0
+Atomic Number: 1, X: 0, Y: 0, Z: 0
+Atomic Number: 6, X: 2.0787, Y: 0, Z: 0
+Atomic Number: 6, X: 4.3653, Y: 0, Z: 0
+Atomic Number: 1, X: 6.444, Y: 0, Z: 0
+Number of basis functions: 10
+Number of electrons: 10
+Overlap matrix:
+  1.0000e+00   1.7090e-02   6.1401e-08   4.3247e-10 
+  1.7090e-02   1.0000e+00   4.5150e-06   6.1401e-08 
+  6.1401e-08   4.5150e-06   1.0000e+00   1.7090e-02 
+  4.3247e-10   6.1401e-08   1.7090e-02   1.0000e+00 

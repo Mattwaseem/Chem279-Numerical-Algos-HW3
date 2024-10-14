@@ -156,6 +156,7 @@ MoleculeSetup_EXTERNAL_OBJECTS =
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/src/CartesianGaussian.cpp.o
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.o
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/build.make
+/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: /opt/homebrew/opt/armadillo/lib/libarmadillo.dylib
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MoleculeSetup.dir/link.txt --verbose=$(VERBOSE)

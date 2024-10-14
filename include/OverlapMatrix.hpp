@@ -3,22 +3,28 @@
 #pragma once
 
 #include "CartesianGaussian.hpp"
+#include <vector>
 
-// class OverlapIntegral
 class OverlapMatrix
 {
 public:
+    OverlapMatrix(const std::vector<CartesianGaussian> &basisFunctions);
+
     // Function to compute overlap in a single dimension (x, y, or z)
-    static double computeOverlap1D(const CartesianGaussian &g1, const CartesianGaussian &g2, int dimension);
+    double computeOverlap3D(const CartesianGaussian &g1, const CartesianGaussian &g2, int dimension);
 
     // Function to calculate the full overlap integral in 3D
-    static double computeTotalOverlap(const CartesianGaussian &g1, const CartesianGaussian &g2);
+    double computeTotalOverlap(const CartesianGaussian &g1, const CartesianGaussian &g2);
+
     void computeOverlapMatrix();
     void printMatrix() const;
 
 private:
+    std::vector<CartesianGaussian> basisFunctions_;
+    std::vector<std::vector<double>> overlapMatrix_;
+
     // Helper function to calculate double factorial
-    static int doubleFactorial(int n);
+    int doubleFactorial(int n);
 };
 
 #endif

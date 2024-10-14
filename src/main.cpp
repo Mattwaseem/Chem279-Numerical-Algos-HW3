@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "OverlapMatrix.hpp"
 #include <armadillo>
@@ -9,15 +8,29 @@
 #include <tuple>
 #include "molecule.h"
 #include "input_parser.h"
-#include "molecule.h"
-#include <iostream>
 
-int main()
+int main(int argc, char *argv[])
 {
-    // Use InputParser to parse the input
-    auto [numAtoms, charge, atomicNumbers, xCoords, yCoords, zCoords] = InputParser::parseMoleculeInput("../sample_input/C2H2.txt");
 
-    // Output parsed information
+    if (argc != 2)
+    {
+        std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
+        return 1;
+    }
+
+    std::string inputFile = argv[1];
+
+    // Uses InputParser
+    auto [numAtoms, charge, atomicNumbers, xCoords, yCoords, zCoords] = InputParser::parseMoleculeInput(inputFile);
+
+    // Checks parsing
+    if (numAtoms == 0)
+    {
+        std::cerr << "Failed to parse the input file: " << inputFile << std::endl;
+        return 1;
+    }
+
+    // Output parsed
     std::cout << "Number of atoms: " << numAtoms << ", Charge: " << charge << std::endl;
 
     for (size_t i = 0; i < atomicNumbers.size(); ++i)
@@ -25,11 +38,11 @@ int main()
         std::cout << "Atomic Number: " << atomicNumbers[i] << ", X: " << xCoords[i] << ", Y: " << yCoords[i] << ", Z: " << zCoords[i] << std::endl;
     }
 
-    // Create molecule object and set up the atom list
+    // Create a Molecule object
     Molecule molecule;
     for (size_t i = 0; i < atomicNumbers.size(); ++i)
     {
-        std::string element = (atomicNumbers[i] == 1) ? "H" : "C"; // Handle H and C
+        std::string element = (atomicNumbers[i] == 1) ? "H" : "C";
         molecule.getAtoms().push_back({element, xCoords[i], yCoords[i], zCoords[i]});
     }
 
@@ -37,20 +50,24 @@ int main()
     std::cout << "Number of basis functions: " << molecule.getNumBasisFunctions() << std::endl;
     std::cout << "Number of electrons: " << molecule.getNumElectrons() << std::endl;
 
-    //  basis functions for overlap matrix calculation
     std::vector<CartesianGaussian> basisFunctions;
     for (size_t i = 0; i < atomicNumbers.size(); ++i)
     {
-        // Gaussian for each atom (C or H) based on parsed input
-        arma::vec center = {xCoords[i], yCoords[i], zCoords[i]};
-        arma::ivec angularMomentum = {0, 0, 0};                              // Assuming s orbitals for now
-        double exponent = (atomicNumbers[i] == 1) ? 3.42525091 : 2.94124940; // Exponent for H or C
 
-        CartesianGaussian gaussian(center, exponent, angularMomentum);
+        arma::vec center = {xCoords[i], yCoords[i], zCoords[i]};
+        arma::ivec angularMomentum = {0, 0, 0};
+
+        // Adjusting exponents for H2 calculation
+        double exponent = (atomicNumbers[i] == 1) ? 1.24 : 2.94124940; // Hydrogen exponent for STO-3G basis
+
+        // Normalization
+        double normalization = std::pow(2.0 * exponent / M_PI, 3.0 / 4.0);
+
+        CartesianGaussian gaussian(center, exponent * normalization, angularMomentum);
         basisFunctions.push_back(gaussian);
     }
 
-    // OverlapMatrix object and compute the overlap matrix
+    // OverlapMatrix
     OverlapMatrix overlapMatrix(basisFunctions);
     overlapMatrix.computeOverlapMatrix();
     overlapMatrix.printMatrix();
