@@ -40,5 +40,5 @@ InputParser::parseMoleculeInput(const std::string &filePath)
 
     inputFile.close();
 
-    return std::make_tuple(numAtoms, charge, atomicNumbers, xCoords, yCoords, zCoords); // returning the parse data from input file as tuple
+    return std::make_tuple(numAtoms, charge, atomicNumbers, xCoords, yCoords, zCoords); // returning tuple
 }

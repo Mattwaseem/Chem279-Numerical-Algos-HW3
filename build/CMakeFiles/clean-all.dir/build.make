@@ -70,7 +70,7 @@ CMakeFiles/clean-all:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Removing all build files, executables, and output files"
 	rm -rf /Users/nematsfolder/chem279/homework3/build/*
 	rm -rf /Users/nematsfolder/chem279/homework3/bin/*
-	rm -rf /Users/nematsfolder/chem279/homework3/calculated_output_p1/*
+	rm -rf /Users/nematsfolder/chem279/homework3/calculated_output/*
 
 clean-all: CMakeFiles/clean-all
 clean-all: CMakeFiles/clean-all.dir/build.make

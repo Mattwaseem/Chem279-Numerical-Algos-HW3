@@ -11,14 +11,12 @@ Overlap matrix:
    0.6599   1.0000
 Constructor: Overlap matrix size: 2 x 2
 Constructor: Diagonal energies size: 2
-Diagonal energies size: 2
-Hamiltonian matrix size: 2 x 2
 Hamiltonian Matrix:
-  -13.6000   -5.3846
-   -5.3846  -13.6000
+  -13.6000   -5.4967
+   -5.4967  -13.6000
 Hamiltonian matrix
-  -13.6000   -5.3846
-   -5.3846  -13.6000
+  -13.6000   -5.4967
+   -5.4967  -13.6000
 X_mat (S^(-1/2))
    1.2454  -0.4692
   -0.4692   1.2454
@@ -28,4 +26,4 @@ MO coefficients (C Matrix):
 MO overlap matrix:
    1.0000e+00  -3.4602e-17
   -9.6341e-17   1.0000e+00
-The molecule in file /Users/nematsfolder/chem279/homework3/sample_input/H2.txt has energy -35.591349
+The molecule in file /Users/nematsfolder/chem279/homework3/sample_input/H2.txt has energy -35.329120
