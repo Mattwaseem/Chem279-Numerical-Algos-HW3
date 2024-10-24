@@ -21,25 +21,43 @@ The best way to approach these problems was to modularize the code, so that subs
 
 ***
 .
+├── CMakeLists.txt
+├── Chem279_HW3__pdf.pdf
+├── README.md
 ├── bin
+│   └── MoleculeSetup
 ├── build
-│   └── CMakeFiles
-│       ├── 3.30.3
-│       │   ├── CompilerIdC
-│       │   │   └── tmp
-│       │   └── CompilerIdCXX
-│       │       └── tmp
-│       ├── CMakeScratch
-│       ├── MoleculeSetup.dir
-│       │   └── src
-│       ├── clean-all.dir
-│       ├── pkgRedirects
-│       └── run.dir
+├── Makefile
+├── cmake_install.cmake
 ├── calculated_output
+│   ├── C2H2_output.txt
+│   ├── C2H4_output.txt
+│   └── H2_output.txt
+├── homework3.pdf
 ├── include
+│   ├── CartesianGaussian.hpp
+│   ├── Hamiltonian.hpp
+│   ├── OverlapMatrix.hpp
+│   ├── basis_function.hpp
+│   ├── input_parser.h
+│   └── molecule.hpp
 ├── sample_input
+│   ├── C2H2.txt
+│   ├── C2H4.txt
+│   └── H2.txt
 ├── sample_output
+│   ├── C2H2.out
+│   ├── C2H4.out
+│   └── H2.out
 └── src
+    ├── CartesianGaussian.cpp
+    ├── Hamiltonian.cpp
+    ├── OverlapMatrix.cpp
+    ├── basis_function.cpp
+    ├── input_parser.cpp
+    ├── main.cpp
+    └── molecule.cpp
+
 ***
 How to Compile and Run:
 Ensure you have armadillo library installed in your system
