@@ -20,6 +20,12 @@ Problem 3: focused on Hamiltonian and Diagonalization
 The best way to approach these problems was to modularize the code, so that subsequent tasks can reuse code from previous tasks. To begin below is the directory structure for the assignment. For the purpose of this discussion files within each directory will not be listed, please refer to my github for file specific details. This is to get a broad overview picture of the directory structure and ease of navigation. </p>
 
 ***
+\documentclass{article}
+\usepackage{verbatim}
+
+\begin{document}
+
+\begin{verbatim}
 .
 ├── CMakeLists.txt
 ├── Chem279_HW3__pdf.pdf
@@ -57,7 +63,9 @@ The best way to approach these problems was to modularize the code, so that subs
     ├── input_parser.cpp
     ├── main.cpp
     └── molecule.cpp
+\end{verbatim}
 
+\end{document}
 ***
 How to Compile and Run:
 Ensure you have armadillo library installed in your system
