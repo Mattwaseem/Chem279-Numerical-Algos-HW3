@@ -1,26 +1,26 @@
 #include "OverlapMatrix.hpp"
 #include <cmath>
 #include <iostream>
+#include <armadillo> // include armadillo
 
 // Constructor for OverlapMatrix
 OverlapMatrix::OverlapMatrix(const std::vector<CartesianGaussian> &basisFunctions)
-    : basisFunctions_(basisFunctions), overlapMatrix_(basisFunctions.size(), std::vector<double>(basisFunctions.size()))
+    : basisFunctions_(basisFunctions), overlapMatrix_(basisFunctions.size(), basisFunctions.size(), arma::fill::zeros)
 {
 }
 
 // Function to compute overlap in a single dimension (x, y, or z)
-double OverlapMatrix::computeOverlap3D(const CartesianGaussian &g1, const CartesianGaussian &g2, int dimension)
+double OverlapMatrix::computeOverlap3DPrimitive(const CartesianGaussian &g1, const CartesianGaussian &g2, int dimension, double alpha1, double alpha2)
 {
     double x1 = g1.getCenter()[dimension];
     double x2 = g2.getCenter()[dimension];
-    double alpha1 = g1.getExponent();
-    double alpha2 = g2.getExponent();
     int l1 = g1.getAngularMomentum()[dimension];
     int l2 = g2.getAngularMomentum()[dimension];
 
     double gamma = alpha1 + alpha2;
     double RP = (alpha1 * x1 + alpha2 * x2) / gamma;
 
+    // Prefactor
     double prefactor = std::exp(-alpha1 * alpha2 * std::pow(x1 - x2, 2) / gamma) * std::sqrt(M_PI / gamma);
 
     double overlap = 0.0;
@@ -43,16 +43,51 @@ double OverlapMatrix::computeOverlap3D(const CartesianGaussian &g1, const Cartes
     return prefactor * overlap;
 }
 
-// Function to calculate the full overlap integral in 3D
+// Function to calculate the normalization constant for a primitive Gaussian
+double computePrimitiveNormalization(double alpha)
+{
+    return std::pow(2 * alpha / M_PI, 0.75);
+}
+
+// Function to calculate the full overlap integral in 3D for contracted Gaussians
 double OverlapMatrix::computeTotalOverlap(const CartesianGaussian &g1, const CartesianGaussian &g2)
 {
-    double Sx = computeOverlap3D(g1, g2, 0); // Overlap in x dimension
-    double Sy = computeOverlap3D(g1, g2, 1); // Overlap in y dimension
-    double Sz = computeOverlap3D(g1, g2, 2); // Overlap in z dimension
+    const std::vector<double> &exponents1 = g1.getExponents();
+    const std::vector<double> &exponents2 = g2.getExponents();
+    const std::vector<double> &coeffs1 = g1.getContractionCoeffs();
+    const std::vector<double> &coeffs2 = g2.getContractionCoeffs();
 
-    double normalization = g1.getNormalizationConstant() * g2.getNormalizationConstant();
+    double totalOverlap = 0.0;
 
-    double totalOverlap = Sx * Sy * Sz * normalization;
+    // Loop over all primitives for both Gaussians
+    for (size_t p = 0; p < exponents1.size(); ++p)
+    {
+        for (size_t q = 0; q < exponents2.size(); ++q)
+        {
+            double alpha1 = exponents1[p];
+            double alpha2 = exponents2[q];
+
+            double Sx = computeOverlap3DPrimitive(g1, g2, 0, alpha1, alpha2); // Overlap in x dimension
+            double Sy = computeOverlap3DPrimitive(g1, g2, 1, alpha1, alpha2); // Overlap in y dimension
+            double Sz = computeOverlap3DPrimitive(g1, g2, 2, alpha1, alpha2); // Overlap in z dimension
+
+            // Contribution from current pair of primitives
+            double primitiveOverlap = Sx * Sy * Sz;
+
+            // Compute normalization constants for the current pair of primitives
+            double norm1 = computePrimitiveNormalization(alpha1);
+            double norm2 = computePrimitiveNormalization(alpha2);
+
+            // Multiply by the contraction coefficients and normalization constants
+            totalOverlap += coeffs1[p] * coeffs2[q] * norm1 * norm2 * primitiveOverlap;
+        }
+    }
+
+    // Add the threshold to set very small values to zero to help better compare the output to expected results.
+    if (std::abs(totalOverlap) < 1e-6)
+    {
+        totalOverlap = 0.0;
+    }
 
     return totalOverlap;
 }
@@ -66,26 +101,27 @@ void OverlapMatrix::computeOverlapMatrix()
         for (size_t j = 0; j <= i; ++j)
         {
             double overlap = computeTotalOverlap(basisFunctions_[i], basisFunctions_[j]);
-            overlapMatrix_[i][j] = overlap;
-            overlapMatrix_[j][i] = overlap; // Symmetric matrix
+
+            // If overlap is very small, round it to 0 to avoid precision issues
+            if (std::abs(overlap) < 1e-6)
+            {
+                overlap = 0.0;
+            }
+
+            overlapMatrix_(i, j) = overlap;
+            overlapMatrix_(j, i) = overlap; // Symmetric matrix
         }
     }
+
+    // Debug: Print matrix size after computation
+    std::cout << "Overlap matrix size: " << overlapMatrix_.n_rows << " x " << overlapMatrix_.n_cols << std::endl;
 }
 
-// Function to print the overlap matrix similar to the provided output to compare my answers.
+// Function to print the overlap matrix
 void OverlapMatrix::printMatrix() const
 {
     std::cout << "Overlap matrix:" << std::endl;
-    for (size_t i = 0; i < overlapMatrix_.size(); ++i)
-    {
-        for (size_t j = 0; j < overlapMatrix_[i].size(); ++j)
-        {
-            // Print each element with scientific notation, 4 decimal places
-            std::cout << std::scientific << std::setprecision(4) << std::setw(12)
-                      << overlapMatrix_[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
+    overlapMatrix_.print(); // Use Armadillo's built-in print function
 }
 
 // Helper function to calculate double factorial

@@ -139,13 +139,43 @@ CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nematsfolder/chem279/homework3/src/OverlapMatrix.cpp -o CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.s
 
+CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o: CMakeFiles/MoleculeSetup.dir/flags.make
+CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o: /Users/nematsfolder/chem279/homework3/src/Hamiltonian.cpp
+CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o: CMakeFiles/MoleculeSetup.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o -MF CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o.d -o CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o -c /Users/nematsfolder/chem279/homework3/src/Hamiltonian.cpp
+
+CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nematsfolder/chem279/homework3/src/Hamiltonian.cpp > CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.i
+
+CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nematsfolder/chem279/homework3/src/Hamiltonian.cpp -o CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.s
+
+CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o: CMakeFiles/MoleculeSetup.dir/flags.make
+CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o: /Users/nematsfolder/chem279/homework3/src/basis_function.cpp
+CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o: CMakeFiles/MoleculeSetup.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o -MF CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o.d -o CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o -c /Users/nematsfolder/chem279/homework3/src/basis_function.cpp
+
+CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nematsfolder/chem279/homework3/src/basis_function.cpp > CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.i
+
+CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nematsfolder/chem279/homework3/src/basis_function.cpp -o CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.s
+
 # Object files for target MoleculeSetup
 MoleculeSetup_OBJECTS = \
 "CMakeFiles/MoleculeSetup.dir/src/main.cpp.o" \
 "CMakeFiles/MoleculeSetup.dir/src/molecule.cpp.o" \
 "CMakeFiles/MoleculeSetup.dir/src/input_parser.cpp.o" \
 "CMakeFiles/MoleculeSetup.dir/src/CartesianGaussian.cpp.o" \
-"CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.o"
+"CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.o" \
+"CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o" \
+"CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o"
 
 # External object files for target MoleculeSetup
 MoleculeSetup_EXTERNAL_OBJECTS =
@@ -155,10 +185,12 @@ MoleculeSetup_EXTERNAL_OBJECTS =
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/src/input_parser.cpp.o
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/src/CartesianGaussian.cpp.o
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.o
+/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o
+/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/build.make
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: /opt/homebrew/opt/armadillo/lib/libarmadillo.dylib
 /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup: CMakeFiles/MoleculeSetup.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MoleculeSetup.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -179,6 +179,30 @@ src/CartesianGaussian.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/CartesianGaussian.cpp.s
 .PHONY : src/CartesianGaussian.cpp.s
 
+src/Hamiltonian.o: src/Hamiltonian.cpp.o
+.PHONY : src/Hamiltonian.o
+
+# target to build an object file
+src/Hamiltonian.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.o
+.PHONY : src/Hamiltonian.cpp.o
+
+src/Hamiltonian.i: src/Hamiltonian.cpp.i
+.PHONY : src/Hamiltonian.i
+
+# target to preprocess a source file
+src/Hamiltonian.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.i
+.PHONY : src/Hamiltonian.cpp.i
+
+src/Hamiltonian.s: src/Hamiltonian.cpp.s
+.PHONY : src/Hamiltonian.s
+
+# target to generate assembly for a file
+src/Hamiltonian.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/Hamiltonian.cpp.s
+.PHONY : src/Hamiltonian.cpp.s
+
 src/OverlapMatrix.o: src/OverlapMatrix.cpp.o
 .PHONY : src/OverlapMatrix.o
 
@@ -202,6 +226,30 @@ src/OverlapMatrix.s: src/OverlapMatrix.cpp.s
 src/OverlapMatrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/OverlapMatrix.cpp.s
 .PHONY : src/OverlapMatrix.cpp.s
+
+src/basis_function.o: src/basis_function.cpp.o
+.PHONY : src/basis_function.o
+
+# target to build an object file
+src/basis_function.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.o
+.PHONY : src/basis_function.cpp.o
+
+src/basis_function.i: src/basis_function.cpp.i
+.PHONY : src/basis_function.i
+
+# target to preprocess a source file
+src/basis_function.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.i
+.PHONY : src/basis_function.cpp.i
+
+src/basis_function.s: src/basis_function.cpp.s
+.PHONY : src/basis_function.s
+
+# target to generate assembly for a file
+src/basis_function.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/src/basis_function.cpp.s
+.PHONY : src/basis_function.cpp.s
 
 src/input_parser.o: src/input_parser.cpp.o
 .PHONY : src/input_parser.o
@@ -289,9 +337,15 @@ help:
 	@echo "... src/CartesianGaussian.o"
 	@echo "... src/CartesianGaussian.i"
 	@echo "... src/CartesianGaussian.s"
+	@echo "... src/Hamiltonian.o"
+	@echo "... src/Hamiltonian.i"
+	@echo "... src/Hamiltonian.s"
 	@echo "... src/OverlapMatrix.o"
 	@echo "... src/OverlapMatrix.i"
 	@echo "... src/OverlapMatrix.s"
+	@echo "... src/basis_function.o"
+	@echo "... src/basis_function.i"
+	@echo "... src/basis_function.s"
 	@echo "... src/input_parser.o"
 	@echo "... src/input_parser.i"
 	@echo "... src/input_parser.s"

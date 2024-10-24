@@ -67,10 +67,10 @@ include CMakeFiles/run.dir/compiler_depend.make
 include CMakeFiles/run.dir/progress.make
 
 CMakeFiles/run: /Users/nematsfolder/chem279/homework3/bin/MoleculeSetup
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running MoleculeSetup with C2H4.txt and generating output"
-	/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup /Users/nematsfolder/chem279/homework3/sample_input/C2H2.txt > /Users/nematsfolder/chem279/homework3/calculated_output_p1/C2H2_output.txt
-	/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup /Users/nematsfolder/chem279/homework3/sample_input/C2H2.txt > /Users/nematsfolder/chem279/homework3/calculated_output_p1/C2H4_output.txt
-	/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup /Users/nematsfolder/chem279/homework3/sample_input/H2.txt > /Users/nematsfolder/chem279/homework3/calculated_output_p1/H2_output.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running MoleculeSetup with C2H2.txt, C2H4.txt, and H2.txt and generating output for each"
+	/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup /Users/nematsfolder/chem279/homework3/sample_input/C2H2.txt > /Users/nematsfolder/chem279/homework3/calculated_output/C2H2_output.txt
+	/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup /Users/nematsfolder/chem279/homework3/sample_input/C2H4.txt > /Users/nematsfolder/chem279/homework3/calculated_output/C2H4_output.txt
+	/Users/nematsfolder/chem279/homework3/bin/MoleculeSetup /Users/nematsfolder/chem279/homework3/sample_input/H2.txt > /Users/nematsfolder/chem279/homework3/calculated_output/H2_output.txt
 
 run: CMakeFiles/run
 run: CMakeFiles/run.dir/build.make

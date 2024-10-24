@@ -83,12 +83,12 @@ clean: CMakeFiles/clean-all.dir/clean
 CMakeFiles/MoleculeSetup.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MoleculeSetup.dir/build.make CMakeFiles/MoleculeSetup.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target MoleculeSetup"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target MoleculeSetup"
 .PHONY : CMakeFiles/MoleculeSetup.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MoleculeSetup.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nematsfolder/chem279/homework3/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nematsfolder/chem279/homework3/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MoleculeSetup.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nematsfolder/chem279/homework3/build/CMakeFiles 0
 .PHONY : CMakeFiles/MoleculeSetup.dir/rule
@@ -109,12 +109,12 @@ CMakeFiles/MoleculeSetup.dir/clean:
 CMakeFiles/run.dir/all: CMakeFiles/MoleculeSetup.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=8 "Built target run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=10 "Built target run"
 .PHONY : CMakeFiles/run.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nematsfolder/chem279/homework3/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nematsfolder/chem279/homework3/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nematsfolder/chem279/homework3/build/CMakeFiles 0
 .PHONY : CMakeFiles/run.dir/rule
@@ -135,7 +135,7 @@ CMakeFiles/run.dir/clean:
 CMakeFiles/clean-all.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean-all.dir/build.make CMakeFiles/clean-all.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean-all.dir/build.make CMakeFiles/clean-all.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=7 "Built target clean-all"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nematsfolder/chem279/homework3/build/CMakeFiles --progress-num=9 "Built target clean-all"
 .PHONY : CMakeFiles/clean-all.dir/all
 
 # Build rule for subdir invocation for target.
