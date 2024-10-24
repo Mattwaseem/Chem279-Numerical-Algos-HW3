@@ -1,15 +1,15 @@
-Numerical Algorithms Applied to Computational Quantum Chemistry
-Homework 3: Implementation of Extended Huckel Theory (EHT)
+# Numerical Algorithms Applied to Computational Quantum Chemistry
+## Homework 3: Implementation of Extended Huckel Theory (EHT)
 
-Link to Github Repo: https://github.com/Mattwaseem/Chem279-Numerical-Algos-HW3
-Repo: publicly available.
-Username: MattWaseem
+### Link to Github Repo: https://github.com/Mattwaseem/Chem279-Numerical-Algos-HW3
+### Repo: publicly available.
+### Username: MattWaseem
 
 
 —
 
-Assignment Overview:
-The goal here was to extend the concepts of overlap integrals, focusing on the next steps in molecular orbital theory calculations using Gaussian basis sets by:
+#### Assignment Overview:
+<p> The goal here was to extend the concepts of overlap integrals, focusing on the next steps in molecular orbital theory calculations using Gaussian basis sets by:
 Parse hydrocarbon molecule input and set up basis functions.
 Compute the overlap matrix using contracted Gaussian-type orbitals (cGTOs).
 Assemble and diagonalize the Hamiltonian matrix to solve for molecular orbitals.
@@ -17,12 +17,9 @@ In similar manner the project was organized in three sections with a supplementa
 Problem 1: focused on molecule input and basis function set up
 Problem 2: focused on Matrix calculation
 Problem 3: focused on Hamiltonian and Diagonalization
-The best way to approach these problems was to modularize the code, so that subsequent tasks can reuse code from previous tasks. To begin below is the directory structure for the assignment. For the purpose of this discussion files within each directory will not be listed, please refer to my github for file specific details. This is to get a broad overview picture of the directory structure and ease of navigation.
+The best way to approach these problems was to modularize the code, so that subsequent tasks can reuse code from previous tasks. To begin below is the directory structure for the assignment. For the purpose of this discussion files within each directory will not be listed, please refer to my github for file specific details. This is to get a broad overview picture of the directory structure and ease of navigation. </p>
 
-
-
-
-
+***
 .
 ├── bin
 ├── build
@@ -43,6 +40,7 @@ The best way to approach these problems was to modularize the code, so that subs
 ├── sample_input
 ├── sample_output
 └── src
+***
 How to Compile and Run:
 Ensure you have armadillo library installed in your system
 Also make sure you have the input files under the input directory.
